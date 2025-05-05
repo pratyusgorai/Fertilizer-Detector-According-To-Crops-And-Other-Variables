@@ -1,0 +1,1 @@
+# Fertilizer-Detector-According-To-Crops-And-Other-Variables
