@@ -318,16 +318,34 @@ if st.button("Predict"):
     st.write("Recommended Fertilizer: Urea")
 
 
-# In[ ]:
+# In[77]:
 
 
+import streamlit as st
+import numpy as np
+
+st.title("Fertilizer Recommendation System 🌱")
+
+n = st.number_input("Nitrogen")
+p = st.number_input("Phosphorus")
+k = st.number_input("Potassium")
+temp = st.number_input("Temperature")
+humidity = st.number_input("Humidity")
+ph = st.number_input("pH")
+rainfall = st.number_input("Rainfall")
 
 
-
-# In[ ]:
-
+# In[78]:
 
 
+if st.button("Predict"):
+    input_data = np.array([[n, p, k, temp, humidity, ph, rainfall]])
+    
+    st.write("Input:", input_data)   # 👈 DEBUG
+    
+    prediction = model.predict(input_data)
+    
+    st.success(f"Recommended Fertilizer: {prediction[0]}")
 
 
 # In[ ]:
